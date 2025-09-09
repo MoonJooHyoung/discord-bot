@@ -1,33 +1,38 @@
-# Discord Bot
+# Discord Voice Bot
 
-Discord 서버에서 멤버 입장/퇴장 알림을 보내는 봇입니다.
+디스코드 서버에서 멤버 입장/퇴장 알림을 보내는 봇입니다.
 
-## 설정 방법
+## 기능
 
-1. Discord Developer Portal에서 봇을 생성하고 토큰을 복사합니다.
-2. Railway에서 환경 변수를 설정합니다:
-   - `DISCORD_TOKEN`: Discord 봇 토큰
+- 멤버 입장 시 환영 메시지 전송
+- 멤버 퇴장 시 퇴장 메시지 전송
+- 커스텀 메시지 설정 가능
 
-## 로컬 실행
+## 설치 및 실행
 
-1. 필요한 패키지 설치:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 1. 의존성 설치
+```bash
+pip install discord.py python-dotenv
+```
 
-2. 환경 변수 설정:
-   - `.env` 파일을 생성하고 `DISCORD_TOKEN=your_token_here` 추가
+### 2. 환경 변수 설정
+`.env` 파일을 생성하고 다음 내용을 추가하세요:
+```
+DISCORD_TOKEN=your_bot_token_here
+```
 
-3. 봇 실행:
-   ```bash
-   python main.py
-   ```
+### 3. 봇 실행
+```bash
+python voice_bot.py
+```
 
-## Railway 배포
+## 설정
 
-1. GitHub에 코드를 푸시합니다.
-2. Railway에서 새 프로젝트를 생성합니다.
-3. GitHub 저장소를 연결합니다.
-4. 환경 변수 `DISCORD_TOKEN`을 설정합니다.
-5. 빌드 명령어: `pip install -r requirements.txt`
-6. 시작 명령어: `python main.py`
+- `channel_id`: 메시지를 보낼 채널 ID
+- `on_member_join`: 입장 메시지 내용
+- `on_member_remove`: 퇴장 메시지 내용
+
+## 주의사항
+
+- 봇 토큰은 절대 공개하지 마세요
+- `.env` 파일은 `.gitignore`에 포함되어 있습니다
